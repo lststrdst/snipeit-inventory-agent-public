@@ -1,0 +1,11 @@
+[Unit]
+Description=Run SnipeIT Inventory Maintenance daily
+
+[Timer]
+OnCalendar=*-*-* 06:30:00
+RandomizedDelaySec=15min
+Persistent=true
+Unit=snipeit-maintenance.service
+
+[Install]
+WantedBy=timers.target

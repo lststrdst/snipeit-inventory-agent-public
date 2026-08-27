@@ -1,0 +1,51 @@
+{
+  "relay_config_path": "/etc/snipeit-mail-relay/config.json",
+  "snipe_app_path": "/var/www/snipe-it",
+  "ldap_helper_path": "/opt/snipeit-maintenance/list_terminated_users.php",
+  "ldap_search_base": "DC=example,DC=internal",
+  "php_binary": "/usr/bin/php",
+  "state_database_path": "/var/lib/snipeit-maintenance/state.sqlite3",
+  "log_path": "/var/log/snipeit-maintenance/maintenance.log",
+  "stock_status_id": 1,
+  "users_deletion_enabled": true,
+  "users_deletion_disabled_days": 30,
+  "offboarding_confirmation_runs": 2,
+  "offboarding_confirmation_interval_hours": 12,
+  "offboarding_max_users_per_run": 10,
+  "offboarding_max_ldap_candidates": 500,
+  "offboarding_require_ldap_import": true,
+  "offboarding_digest_repeat_hours": 168,
+  "offboarding_protected_usernames": [
+    "^snipeit$",
+    "^admin(?:istrator)?$",
+    "^\\u0430\\u0434\\u043c\\u0438\\u043d\\u0438\\u0441\\u0442\\u0440\\u0430\\u0442\\u043e\\u0440$",
+    "^krbtgt$",
+    "^svc[_\\.-]",
+    "^service[_\\.-]",
+    "^transcom$"
+  ],
+  "users_deletion_mail_to": "it@example.com",
+  "product_name": "SnipeIT Inventory",
+  "mail_subject_prefix": "[SNIPEIT-INVENTORY]",
+  "users_deletion_subject_prefix": "[SNIPEIT-INVENTORY] ALERT:",
+  "weekly_report_enabled": true,
+  "weekly_report_weekday": 0,
+  "weekly_report_stale_days": 7,
+  "weekly_report_critical_days": 14,
+  "weekly_report_category_ids": [
+    1
+  ],
+  "weekly_report_max_rows": 250,
+  "weekly_report_mail_to": "it@example.com",
+  "weekly_report_subject_prefix": "[SNIPEIT-INVENTORY] REPORT:",
+  "weekly_alert_mail_to": "it@example.com",
+  "weekly_alert_subject_prefix": "[SNIPEIT-INVENTORY] ALERT:",
+  "weekly_report_timezone": "Europe/Moscow",
+  "weekly_report_send_when_empty": true,
+  "maintenance_database_retention_days": 365,
+  "custom_fields": {
+    "agent_version": "_snipeit_agent_version_11",
+    "last_success": "_snipeit_last_successful_inventory_12",
+    "last_error": "_snipeit_last_error_13"
+  }
+}

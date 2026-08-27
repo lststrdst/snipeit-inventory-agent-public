@@ -1,0 +1,10 @@
+/var/log/snipeit-maintenance/*.log {
+    daily
+    rotate 30
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+    su snipeit snipeit
+}
