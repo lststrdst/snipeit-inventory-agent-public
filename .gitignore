@@ -1,0 +1,15 @@
+# Production and local secrets
+**/*-SECURE/**
+**/*local.json
+**/config.json
+**/*.key
+**/*.pem
+**/*.pub
+
+# Runtime data
+*.sqlite3
+*.log
+*.tmp
+*.bak
+*.zip
+__pycache__/
