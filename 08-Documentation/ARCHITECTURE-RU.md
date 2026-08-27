@@ -16,6 +16,22 @@ Active Directory --> Maintenance: подтверждённый offboarding
 Snipe-IT API      --> Maintenance: склад, soft delete, weekly report
 ```
 
+## Стек
+
+| Слой | Технологии и назначение |
+|---|---|
+| Клиент | Windows 10/11, PowerShell 5.1, WMI/CIM, Windows Event Log |
+| Автоматический запуск | Active Directory GPO, Task Scheduler, VBS-обёртка для скрытого запуска от SYSTEM |
+| Каталог пользователей | Active Directory, LDAP sync Snipe-IT, SSH с ключом, ограниченным forced command |
+| Учёт активов | Snipe-IT, REST API, custom fields, checkout/checkin и склад |
+| Доставка без прямого API | SMTP с STARTTLS, IMAP over TLS, JSON, HMAC-SHA256 и стабильный event_id |
+| Серверное реле | Python 3 без внешних библиотек, systemd service/timer, SQLite для дедупликации |
+| Обслуживание | Python 3, Snipe-IT API, LDAP, SQLite, systemd timers |
+| Наблюдаемость | Структурированные локальные логи, почтовые отчёты, weekly report и server-side retention |
+
+Секреты не являются частью reference-репозитория: токены, пароли, HMAC и
+приватные ключи передаются только через закрытый конфиг и защищённое хранилище.
+
 ## 1. Windows Agent
 
 Основной файл: `snipeit_inventory.ps1`, версия `1.3.3`.

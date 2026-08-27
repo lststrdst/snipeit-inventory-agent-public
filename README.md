@@ -35,6 +35,7 @@ GPO-материалы, примеры конфигурации и тесты. P
 ## Документация
 
 - Архитектура и потоки: `08-Documentation/ARCHITECTURE-RU.md`.
+- Технологический стек: раздел **«Стек»** в `08-Documentation/ARCHITECTURE-RU.md`.
 - Развёртывание и GPO: `08-Documentation/README-GPO.txt`.
 - Изменения: `08-Documentation/CHANGELOG-1.3.3-RU.md` и
   `08-Documentation/CHANGELOG-1.3.3-EN.md`.
