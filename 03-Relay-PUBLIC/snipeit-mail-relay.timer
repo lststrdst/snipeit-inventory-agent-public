@@ -1,0 +1,13 @@
+[Unit]
+Description=Poll IMAP for SnipeIT Inventory Relay messages
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=1s
+RandomizedDelaySec=0
+Persistent=true
+Unit=snipeit-mail-relay.service
+
+[Install]
+WantedBy=timers.target

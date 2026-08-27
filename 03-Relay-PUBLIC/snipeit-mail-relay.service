@@ -1,0 +1,37 @@
+[Unit]
+Description=SnipeIT Inventory Relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=snipeit
+Group=snipeit
+WorkingDirectory=/opt/snipeit-mail-relay
+ExecStart=/usr/bin/python3 /opt/snipeit-mail-relay/snipeit_mail_relay.py --config /etc/snipeit-mail-relay/config.json
+UMask=0077
+NoNewPrivileges=true
+CapabilityBoundingSet=
+PrivateDevices=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProcSubset=pid
+LockPersonality=true
+MemoryDenyWriteExecute=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+ReadWritePaths=/var/lib/snipeit-mail-relay /var/log/snipeit-mail-relay /var/www/snipe-it/storage /var/www/snipe-it/bootstrap/cache
+
+[Install]
+WantedBy=multi-user.target

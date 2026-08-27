@@ -1,0 +1,159 @@
+{
+  "imap_host": "imap.yandex.ru",
+  "imap_port": 993,
+  "imap_user": "it@example.com",
+  "imap_password": "PUT_IMAP_APP_PASSWORD_HERE",
+  "product_name": "SnipeIT Inventory",
+  "mail_subject_prefix": "[SNIPEIT-INVENTORY]",
+  "imap_parent_folder": "SnipeIT Inventory",
+  "imap_folder": "Offline Relay",
+  "inbox_folder": "INBOX",
+  "processed_folder": "Processed Events",
+  "rejected_folder": "Rejected Events",
+  "weekly_reports_folder": "! Weekly Reports",
+  "reports_folder": "Reports",
+  "alerts_folder": "Alerts",
+  "warnings_folder": "Warnings",
+  "errors_folder": "Errors",
+  "create_imap_folders": true,
+  "migrate_legacy_folders": true,
+  "delete_empty_legacy_folders": true,
+  "legacy_imap_parent_folders": [
+    "SNIPEIT Autoinv",
+    "SNIPEIT Inventory"
+  ],
+  "legacy_relay_folders": [
+    "Relay",
+    "SnipeIT Relay"
+  ],
+  "legacy_processed_folders": [
+    "Processed",
+    "SnipeIT Processed"
+  ],
+  "legacy_rejected_folders": [
+    "Rejected",
+    "SnipeIT Rejected"
+  ],
+  "legacy_weekly_reports_folders": [
+    "Weekly Reports"
+  ],
+  "legacy_reports_folders": [
+    "Inventory"
+  ],
+  "legacy_warning_folders": [],
+  "legacy_error_folders": [
+    "Inventory Reports",
+    "SnipeIT ERROR/WARN"
+  ],
+  "legacy_root_error_folders": [
+    "SNIPEIT Inventory"
+  ],
+  "legacy_migration_max_messages_per_run": 1000,
+  "imap_timeout_seconds": 30,
+  "imap_command_retries": 3,
+  "imap_retry_delay_seconds": 1,
+  "max_messages_per_run": 200,
+  "sort_human_reports": true,
+  "human_report_search_terms": [
+    "SNIPEIT-INVENTORY",
+    "PCINV",
+    "PC Inventory"
+  ],
+  "report_subject_prefix": "[SNIPEIT-INVENTORY] REPORT:",
+  "weekly_report_subject_prefixes": [
+    "[SNIPEIT-INVENTORY] REPORT: WEEKLY:",
+    "[SNIPEIT-INVENTORY] ALERT: WEEKLY:",
+    "[PCINV-REPORT] WEEKLY:",
+    "[PCINV-ALERT] WEEKLY:",
+    "[PCINV-ALERT] WATCHDOG:"
+  ],
+  "weekly_report_search_terms": [
+    "WEEKLY",
+    "WATCHDOG"
+  ],
+  "legacy_report_subject_prefixes": [
+    "[PCINV-REPORT]"
+  ],
+  "warning_subject_prefix": "[SNIPEIT-INVENTORY] WARNING:",
+  "legacy_warning_subject_prefixes": [
+    "[SNIPEIT-INVENTORY] REPORT: WARNING:",
+    "[PCINV-REPORT] WARNING:",
+    "PC Inventory WARNING"
+  ],
+  "error_subject_prefix": "[SNIPEIT-INVENTORY] ERROR:",
+  "human_alert_subject_prefix": "[SNIPEIT-INVENTORY] ALERT:",
+  "human_alert_subject_prefixes": [
+    "[PCINV-ALERT]"
+  ],
+  "legacy_error_subject_prefixes": [
+    "PC Inventory ERROR"
+  ],
+  "allowed_from": [
+    "inventory-sender@example.com"
+  ],
+  "report_allowed_from": [
+    "inventory-sender@example.com",
+    "it@example.com"
+  ],
+  "subject_prefix": "[SNIPEIT-INVENTORY] RELAY:",
+  "relay_search_terms": [
+    "SNIPEIT",
+    "RELAY"
+  ],
+  "legacy_relay_subject_prefixes": [
+    "[SNIPEIT-RELAY]"
+  ],
+  "hmac_secret": "MUST_MATCH_InventoryRelayHmacSecret_ON_CLIENTS",
+  "smtp_host": "smtp.yandex.ru",
+  "smtp_port": 587,
+  "smtp_user": "it@example.com",
+  "smtp_password": "PUT_SMTP_APP_PASSWORD_HERE",
+  "smtp_starttls": true,
+  "smtp_ssl": false,
+  "smtp_timeout_seconds": 30,
+  "alert_mail_to": "it@example.com",
+  "alert_subject_prefix": "[SNIPEIT-INVENTORY] ERROR:",
+  "alert_after_hours": 24,
+  "cleanup_interval_hours": 24,
+  "processed_retention_days": 30,
+  "rejected_retention_days": 60,
+  "weekly_reports_retention_days": 365,
+  "reports_retention_days": 180,
+  "alerts_retention_days": 365,
+  "warnings_retention_days": 180,
+  "errors_retention_days": 365,
+  "database_retention_days": 365,
+  "cleanup_max_messages_per_folder": 1000,
+  "snipe_url": "https://127.0.0.1",
+  "snipe_host_header": "snipeit.example.internal",
+  "snipe_token": "PUT_SERVER_SIDE_SNIPEIT_API_TOKEN_HERE",
+  "verify_tls": false,
+  "api_timeout_seconds": 30,
+  "max_message_bytes": 2097152,
+  "stale_grace_seconds": 5,
+  "display_timezone": "Europe/Moscow",
+  "database_path": "/var/lib/snipeit-mail-relay/events.sqlite3",
+  "log_path": "/var/log/snipeit-mail-relay/relay.log",
+  "default_status_id": 8,
+  "stock_status_id": 1,
+  "default_category_id": 1,
+  "default_manufacturer_id": 1,
+  "default_fieldset_id": 2,
+  "custom_fields": {
+    "ram": "_snipeit_ram_3",
+    "cpu": "_snipeit_cpu_4",
+    "os": "_snipeit_os_9",
+    "storage": "_snipeit_storage_10",
+    "agent_version": "_snipeit_agent_version_11",
+    "last_success": "_snipeit_last_successful_inventory_12",
+    "last_error": "_snipeit_last_error_13"
+  },
+  "ldap_sync_command": [
+    "/usr/bin/php",
+    "artisan",
+    "snipeit:ldap-sync",
+    "--summary",
+    "--no-interaction"
+  ],
+  "ldap_sync_cwd": "/var/www/snipe-it"
+}
