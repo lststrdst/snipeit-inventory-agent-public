@@ -36,7 +36,10 @@ GPO-материалы, примеры конфигурации и тесты. P
 
 - Архитектура и потоки: `08-Documentation/ARCHITECTURE-RU.md`.
 - Развёртывание и GPO: `08-Documentation/README-GPO.txt`.
-- Изменения: `08-Documentation/CHANGELOG-1.3.3-RU.md`.
+- Изменения: `08-Documentation/CHANGELOG-1.3.3-RU.md` и
+  `08-Documentation/CHANGELOG-1.3.3-EN.md`.
+- RAM-исправление 1.3.2: `08-Documentation/CHANGELOG-1.3.2-RU.md` и
+  `08-Documentation/CHANGELOG-1.3.2-EN.md`.
 - Примеры конфигурации: `01-Agent-PUBLIC`, `03-Relay-PUBLIC`, `05-Maintenance-PUBLIC`.
 
 Не используйте этот репозиторий как production-конфигурацию без настройки
