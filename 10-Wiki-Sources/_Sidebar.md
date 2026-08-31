@@ -5,3 +5,4 @@
 - [Эксплуатация](Operations)
 - [Безопасность](Security)
 - [История версий](Changelog)
+- [Тексты Releases](Release-Notes)
