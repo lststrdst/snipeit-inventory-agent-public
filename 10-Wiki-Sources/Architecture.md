@@ -18,4 +18,4 @@ offboarding, retention и контроль свежести данных. SQLite
 
 Это переходная архитектура: HMAC обеспечивает целостность, но payload не
 шифруется, а прямой API доступ остается на клиентах. Эти ограничения устранены
-в отдельной архитектуре SnipeIT Inventory Gateway.
+в отдельном репозитории `snipeit-inv-mailgateway-public`.
