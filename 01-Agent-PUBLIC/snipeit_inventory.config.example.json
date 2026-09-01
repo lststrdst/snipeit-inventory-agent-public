@@ -31,6 +31,9 @@
     "user": "u.user",
     "userold": "u.user"
   },
+  "InventoryNonStandardAccounts": [
+    "ExampleUser"
+  ],
   "InventoryLogDirOverride": "C:\\ProgramData\\snipeit_auto\\Logs",
   "SnipeSshHost": "192.0.2.10",
   "SnipeSshUser": "snipeit",

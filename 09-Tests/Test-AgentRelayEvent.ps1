@@ -16,8 +16,16 @@ function Assert-True {
     }
 }
 
-$agentPath = Join-Path (Split-Path -Parent $PSScriptRoot) "snipeit_inventory.ps1"
+$repoRoot = Split-Path -Parent $PSScriptRoot
+$agentPath = Join-Path $repoRoot "01-Agent-PUBLIC\snipeit_inventory.ps1"
+if (-not (Test-Path -LiteralPath $agentPath)) {
+    $agentPath = Join-Path $repoRoot "snipeit_inventory.ps1"
+}
 $null = . $agentPath -LibraryMode
+
+Assert-True (Test-InventoryOwnerUsername -Username "ExampleUser") "Configured non-standard account was rejected."
+Assert-True (Test-InventoryOwnerUsername -Username "u.user") "Standard account was rejected."
+Assert-True (-not (Test-InventoryOwnerUsername -Username "OtherLegacyAccount")) "Unlisted non-standard account was accepted."
 
 $ownerChange = Resolve-InventoryRelayEventContext `
     -RequestedDisposition "assigned" `
@@ -128,8 +136,8 @@ Assert-True ($agentUpgrade.EventGeneration -eq 4) "Agent upgrade changed assignm
 
 $legacyAdCandidates = @(
     Get-LegacyInventoryUsernameCandidates -Usernames @(
-        "EXAMPLE\LegacyUserK",
-        "LegacyUserK",
+        "EXAMPLE\ExampleUserK",
+        "ExampleUserK",
         "EXAMPLE\k.exampleuser"
     )
 )

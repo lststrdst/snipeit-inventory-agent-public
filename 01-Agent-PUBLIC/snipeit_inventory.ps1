@@ -137,6 +137,8 @@ $InventoryStatePathOverride = ""
 $InventoryLogDirOverride = ""
 $InventoryEnableLegacyUsernameAliases = $true
 $InventoryUsernameAliases = @{}
+# Нестандартные логины задаются точным allow-list в конфигурации Gateway.
+$InventoryNonStandardAccounts = @("ExampleUser")
 $SendEmailReport = $true
 $SendEmailOnUserChange = $true
 $SendEmailOnSnipeUserChange = $true
@@ -252,6 +254,7 @@ $InventoryConfigurableVariables = @(
     "InventoryLogDirOverride",
     "InventoryEnableLegacyUsernameAliases",
     "InventoryUsernameAliases",
+    "InventoryNonStandardAccounts",
     "SendEmailReport",
     "SendEmailOnUserChange",
     "SendEmailOnSnipeUserChange",
@@ -1591,6 +1594,11 @@ function Get-InventoryUsername {
             }
         }
 
+        if (-not $isExcluded -and -not (Test-InventoryOwnerUsername -Username $login)) {
+            Write-Log "Username '$login' пропущен: не соответствует стандартному формату и отсутствует в InventoryNonStandardAccounts."
+            continue
+        }
+
         if (-not $isExcluded) {
             return $login
         }
@@ -1646,6 +1654,20 @@ function Test-InventoryUsernameMatchesPatterns {
         }
     }
     return $false
+}
+
+function Test-InventoryOwnerUsername {
+    param([AllowNull()][string]$Username)
+
+    $login = Get-InventoryLoginName -AccountName $Username
+    if ([string]::IsNullOrWhiteSpace($login)) { return $false }
+    foreach ($approved in @($InventoryNonStandardAccounts)) {
+        if (-not [string]::IsNullOrWhiteSpace([string]$approved) -and
+            $login.Equals(([string]$approved).Trim(), [System.StringComparison]::OrdinalIgnoreCase)) {
+            return $true
+        }
+    }
+    return $login -match '^[a-z]\.[a-z]+(?:-[a-z]+)?$'
 }
 
 function Get-LatestObservedInventoryUser {
