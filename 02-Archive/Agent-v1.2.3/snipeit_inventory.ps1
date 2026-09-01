@@ -34,7 +34,7 @@ $InventoryStateSchemaVersion = 1
 # ==========================
 # SMTP НАСТРОЙКИ
 # ==========================
-$SmtpServer = "smtp.yandex.ru"
+$SmtpServer = "smtp.example.com"
 $SmtpPort   = 587
 $UseSsl     = $true
 

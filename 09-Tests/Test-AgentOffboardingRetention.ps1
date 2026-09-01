@@ -34,9 +34,9 @@ Assert-True $activeTerminatedOu.OuMatched "Terminated OU audit flag was not dete
 Assert-True $disabled.Terminated "Disabled AD account was not treated as terminated."
 Assert-True (
     Test-InventoryUsernameMatchesPatterns `
-        -Username "transcom" `
+        -Username "svc_inventory" `
         -Patterns $InventoryExcludedUsernamePatterns
-) "Shared transcom login is not excluded."
+) "Shared service login is not excluded."
 Assert-True (
     Test-InventoryUsernameMatchesPatterns `
         -Username "ad_rdv" `
@@ -109,7 +109,7 @@ Assert-True (($limited.id -contains 'relay1') -and ($limited.id -contains 'relay
     DisabledAuthoritative   = $disabled.Terminated
     ActiveDescriptionSafe   = -not $activeDescription.Terminated
     ActiveOuSafe            = -not $activeTerminatedOu.Terminated
-    TranscomExcluded        = $true
+    ServiceAccountExcluded  = $true
     RetainedLogRuns         = $retainedRuns
     PendingMailQueueItems   = $limited.Count
 }

@@ -31,7 +31,7 @@ $InventoryAgentVersion = "1.2.0"
 # ==========================
 # SMTP НАСТРОЙКИ
 # ==========================
-$SmtpServer = "smtp.yandex.ru"
+$SmtpServer = "smtp.example.com"
 $SmtpPort   = 587
 $UseSsl     = $true
 

@@ -39,7 +39,7 @@ $InventoryErrorSubjectPrefix = "[SNIPEIT-INVENTORY] ERROR:"
 # ==========================
 # SMTP НАСТРОЙКИ
 # ==========================
-$SmtpServer = "smtp.yandex.ru"
+$SmtpServer = "smtp.example.com"
 $SmtpPort   = 587
 $UseSsl     = $true
 
@@ -195,7 +195,7 @@ $InventoryExcludedUsernamePatterns = @(
     '^wdagutilityaccount$',
     '^guest$',
     '^гость$',
-    '^transcom$'
+    '^svc_inventory$'
 )
 
 $InventoryPreferredDomains = @("EXAMPLE", "EXAMPLE")
@@ -370,7 +370,7 @@ $InventoryExcludedUsernamePatterns = @(
         '^wdagutilityaccount$',
         '^guest$',
         '^гость$',
-        '^transcom$'
+        '^svc_inventory$'
     ) |
         Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } |
         Select-Object -Unique

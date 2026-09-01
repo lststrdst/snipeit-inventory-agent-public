@@ -4,7 +4,7 @@
   "SnipeToken": "PUT_SNIPEIT_API_TOKEN_HERE",
   "SnipeDefaultStatusId": 8,
   "SnipeStockStatusId": 1,
-  "SmtpServer": "smtp.yandex.ru",
+  "SmtpServer": "smtp.example.com",
   "SmtpPort": 587,
   "UseSsl": true,
   "SmtpUser": "inventory@example.com",

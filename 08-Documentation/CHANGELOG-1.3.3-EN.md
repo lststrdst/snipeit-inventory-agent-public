@@ -34,7 +34,7 @@ accounts are excluded. A re-enabled account resets the countdown.
 
 On the endpoint, a disabled current owner is returned to stock immediately. A
 later inventory run checks equipment out to a new valid interactive user.
-Shared and system accounts, including `transcom`, `defaultuser*`, guest and
+Shared and system accounts, including `svc_inventory`, `defaultuser*`, guest and
 Windows service identities, cannot become asset owners or trigger false LDAP
 sync warnings.
 

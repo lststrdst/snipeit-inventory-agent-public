@@ -22,7 +22,7 @@
     "^krbtgt$",
     "^svc[_\\.-]",
     "^service[_\\.-]",
-    "^transcom$"
+    "^svc_inventory$"
   ],
   "users_deletion_mail_to": "it@example.com",
   "product_name": "SnipeIT Inventory",

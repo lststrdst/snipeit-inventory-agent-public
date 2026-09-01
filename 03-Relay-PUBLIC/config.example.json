@@ -1,5 +1,5 @@
 {
-  "imap_host": "imap.yandex.ru",
+  "imap_host": "imap.example.com",
   "imap_port": 993,
   "imap_user": "it@example.com",
   "imap_password": "PUT_IMAP_APP_PASSWORD_HERE",
@@ -104,7 +104,7 @@
     "[SNIPEIT-RELAY]"
   ],
   "hmac_secret": "MUST_MATCH_InventoryRelayHmacSecret_ON_CLIENTS",
-  "smtp_host": "smtp.yandex.ru",
+  "smtp_host": "smtp.example.com",
   "smtp_port": 587,
   "smtp_user": "it@example.com",
   "smtp_password": "PUT_SMTP_APP_PASSWORD_HERE",
