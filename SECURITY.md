@@ -1,6 +1,6 @@
 # Security
 
-Публичная копия обезличена. В ней не должно быть production API token,
+В репозитории не должно быть production API token,
 SMTP/IMAP password, HMAC secret, SSH-ключей, реальных логов, SQLite или
 backup-файлов. Все примеры секретов являются placeholders.
 
