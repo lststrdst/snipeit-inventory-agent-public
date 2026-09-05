@@ -17,3 +17,7 @@ SMTP/IMAP-контуром.
 - [Безопасность](Security)
 - [История версий](Changelog)
 - [Тексты Releases](Release-Notes)
+
+---
+
+© lststrdst

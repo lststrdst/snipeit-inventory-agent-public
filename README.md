@@ -76,3 +76,7 @@ API token остается только на сервере, а клиент о�
 Подробности текущей версии находятся в
 `08-Documentation/ARCHITECTURE-RU.md` и
 `08-Documentation/CHANGELOG-1.3.3-RU.md`.
+
+---
+
+© lststrdst
